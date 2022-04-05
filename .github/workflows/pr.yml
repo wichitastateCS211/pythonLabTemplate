@@ -10,9 +10,6 @@ jobs:
         run: echo "Submitted at " $(date)
       - name: List files
         run: ls -alh
-      - name: Compile Code
-        run: ./.github/scripts/compile_script.sh "${pwd}"
-        shell: bash
       - name: Run program
-        run: ./submission
+        run: find . -name '*.py' | head -n 1 | xargs python3
         shell: bash
